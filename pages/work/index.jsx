@@ -33,55 +33,60 @@ const workSlides = {
     {
       images: [
         {
-          title: "Wildlife Protection AI",
-          path: "/thumb1.jpg",
-          description: "Neural network system for real-time wildlife monitoring and threat detection",
+          title: "Elephant Monitoring And Alert System",
+          path: "https://www.linkedin.com/posts/keshav-s-545345266_happy-to-share-my-project-an-elephant-monitoring-ugcPost-7339508260653191168--gAN?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEEwrMUBZO19E84wX2BUFtuXKzqeIllh6PA",
+          description: "IoT-based system for real-time elephant tracking and alert generation to reduce human-wildlife conflicts.",
         },
         {
-          title: "Smart Campus IoT",
-          path: "/thumb2.jpg",
-          description: "Integrated IoT platform managing 500+ sensors across university campus",
+          title: "SerpentSense",
+          path: "https://serpent-sense-bot.vercel.app/",
+          description: "AI-powered web platform for snake species identification and instant bite-response guidance using image classification.",
         },
         {
-          title: "Predictive Analytics Engine",
-          path: "/thumb3.jpg",
-          description: "Machine learning pipeline for demand forecasting with 94% accuracy",
+          title: "SafariConnect",
+          path: "https://safari-connect-ebzmnedgv-kodewithkeshav-4392s-projects.vercel.app/#/login",
+          description: "Flutter app for centralized safari booking across Indian national parks with integrated chatbot promoting eco-tourism.",
         },
         {
-          title: "Autonomous Navigation",
-          path: "/thumb4.jpg",
-          description: "Computer vision system for indoor robot navigation and obstacle avoidance",
+          title: "Accoustic Monitor",
+          path: "https://github.com/KodeWithKeshav/Accoustic_Monitor",
+          description: "ML-based passive acoustic monitoring system for identifying nocturnal animal species using environmental sound analysis.",
         },
       ],
     },
     {
       images: [
         {
-          title: "Blockchain Supply Chain",
-          path: "/thumb5.jpg",
-          description: "Distributed ledger system for transparent supply chain tracking",
+          title: "MediChain",
+          path: "https://github.com/KodeWithKeshav/MediLink",
+          description: "Blockchain-enabled healthcare platform ensuring secure and transparent tracking of medical supply chains.",
         },
         {
-          title: "Real-time Collaboration",
-          path: "/thumb6.jpg",
-          description: "WebSocket-based platform supporting 10k+ concurrent users",
+          title: "Animal FootPrint Classifier",
+          path: "https://github.com/KodeWithKeshav/Footprint_classifier",
+          description: "Deep learning model that classifies animal species from footprint images to aid wildlife monitoring and research.",
         },
         {
-          title: "Edge Computing Framework",
-          path: "/thumb7.jpg",
-          description: "Low-latency processing system for IoT devices at the edge",
+          title: "Smart Canteen System",
+          path: "https://github.com/KodeWithKeshav/Menu_Catlog",
+          description: "Full-stack web application for digital canteen management, featuring online ordering, payments, and menu automation.",
         },
         {
-          title: "Security Monitoring AI",
-          path: "/thumb8.jpg",
-          description: "Anomaly detection system processing 1M+ events per second",
+          title: "NSS Portal",
+          path: "https://github.com/KodeWithKeshav/nss-test",
+          description: "Full-stack portal for managing NSS events, volunteer activities, and attendance with admin and student dashboards.",
         },
       ],
     },
   ],
 };
 
+
 const WorkSlider = () => {
+  const handleCardClick = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <Swiper
       spaceBetween={10}
@@ -97,7 +102,8 @@ const WorkSlider = () => {
             {slide.images.map((image, imageIndex) => (
               <div
                 key={imageIndex}
-                className="relative rounded-xl overflow-hidden group bg-gradient-to-br from-zinc-900/70 via-black/60 to-zinc-950/70 border border-zinc-800/50 hover:border-red-600/50 transition-all duration-500 backdrop-blur-sm"
+                onClick={() => handleCardClick(image.path)}
+                className="relative rounded-xl overflow-hidden group bg-gradient-to-br from-zinc-900/70 via-black/60 to-zinc-950/70 border border-zinc-800/50 hover:border-red-600/50 transition-all duration-500 backdrop-blur-sm cursor-pointer"
               >
                 {/* Animated background effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 via-red-600/0 to-red-600/0 group-hover:from-red-600/20 group-hover:via-red-600/10 group-hover:to-transparent transition-all duration-500"></div>
