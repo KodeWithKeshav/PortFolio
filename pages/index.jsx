@@ -27,12 +27,10 @@ const Home = () => {
             exit="hidden"
             className="text-sm sm:text-base lg:text-lg max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-gray-300 leading-relaxed"
           >
-            Genius. Billionaire. Playboy. Philanthropist? Not quite. But I am a 
-            Computer Science engineer at Amrita Vishwa Vidyapeetham, 
-            architecting AI systems that think, IoT networks that pulse with life, 
-            and full-stack solutions that don't just work—they dominate. I turn 
-            impossible problems into elegant code and wild ideas into published research. 
-            No arc reactor yet, but give me time.
+         Genius. Billionaire. Playboy. Philanthropist? Not quite.
+But I’m a Computer Science Engineer at Amrita Vishwa Vidyapeetham, architecting AI systems that think, IoT devices that pulse with life, and full-stack solutions that don’t just work — they dominate.
+I turn impossible problems into elegant code and wild ideas into published research.
+No arc reactor yet, but give me time.
           </motion.p>
         </div>
       </div>

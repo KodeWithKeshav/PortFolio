@@ -216,10 +216,7 @@ const Work = () => {
               exit="hidden"
               className="text-sm sm:text-base md:text-lg mb-4 max-w-[400px] mx-auto lg:mx-0 text-gray-300 leading-relaxed"
             >
-              This is where theory meets reality. From neural networks that protect wildlife 
-              to IoT systems that power smart campuses, each project is a testament to what 
-              happens when you combine ambition with execution. No prototypes—just production-ready 
-              tech that solves real problems. Think of these as my Mark series, but in code.
+This is where technology meets purpose. From IoT systems that prevent human–wildlife conflicts to AI platforms that identify snakes and monitor animal sounds, each project bridges innovation with impact. Whether it’s blockchain powering transparency in healthcare, Flutter apps promoting eco-tourism, or full-stack portals transforming campus life — every line of code is built for the real world, not just the demo room.
             </motion.p>
           </div>
 

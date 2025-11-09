@@ -192,9 +192,9 @@ const About = () => {
                 animate="show"
                 className="max-w-[600px] mx-auto xl:mx-0 mb-6 xl:mb-8 text-sm sm:text-base text-gray-300 bg-black/40 backdrop-blur-sm p-4 sm:p-6 rounded-lg"
               >
-                I don't just write code—I engineer intelligence. From neural networks 
-                that learn to IoT systems that sense, from frontend interfaces that dazzle 
-                to backend architectures that never break. Currently pushing the boundaries 
+                I don't just write code, I engineer intelligence from neural networks 
+                that learn, to IoT systems that sense, from frontend interfaces that dazzle 
+                to backend architectures that never break. Currently I am pushing the boundaries 
                 of AI and cybersecurity research while turning theoretical computer science 
                 into weapons-grade software. Think of me as the guy who speaks fluent in 
                 both silicon and algorithm.
