@@ -7,7 +7,7 @@
     "email": "keshavs100605@gmail.com",
     "url": "https://github.com/KodeWithKeshav"
   },
-  "description": "Ethan Smith is a Full-stack web developer with 10+ years of experience.",
+  "description": "My PortFolio",
   "keywords": [
     "react",
     "next",
@@ -26,22 +26,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/modern-portfolio.git"
+    "url": "https://github.com/KodeWithKeshav/PortFolio"
   },
-  "homepage": "https://github.com/sanidhyy/modern-portfolio#readme",
+  "homepage": "https://github.com/KodeWithKeshav/PortFolio#readme",
   "bugs": {
-    "url": "https://github.com/sanidhyy/modern-portfolio/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "https://github.com/KodeWithKeshav/PortFolio/issues",
+    "email": "keshavs100605@gmail.com"
   },
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
-    },
-    {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
-    }
   ],
   "scripts": {
     "dev": "next dev",
