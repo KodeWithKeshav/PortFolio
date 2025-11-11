@@ -28,12 +28,6 @@
     "type": "git",
     "url": "https://github.com/KodeWithKeshav/PortFolio"
   },
-  "homepage": "https://github.com/KodeWithKeshav/PortFolio#readme",
-  "bugs": {
-    "url": "https://github.com/KodeWithKeshav/PortFolio/issues",
-    "email": "keshavs100605@gmail.com"
-  },
-  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
