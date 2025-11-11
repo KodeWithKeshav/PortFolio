@@ -60,15 +60,17 @@ const Contact = () => {
   return (
     <div className="relative min-h-screen bg-black overflow-hidden">
       {/* Spline 3D Globe Background */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <iframe
-          src="https://my.spline.design/holographicearthwithdynamiclines-b5ztVr6TXaeDvtlhKBxTc3jr/"
+          src="https://my.spline.design/worldplanet-XkYA2BwyJ8tHp0ggzrmrPVSE/"
           className="w-full h-full border-0"
           style={{
             pointerEvents: isMobile ? 'none' : 'auto',
           }}
           title="3D Globe"
         />
+        {/* Hide Spline watermark */}
+        <div className="absolute bottom-0 right-0 w-48 h-16 bg-black z-10" />
         {/* Overlay gradient for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70 pointer-events-none" />
       </div>
