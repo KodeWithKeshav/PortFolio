@@ -28,6 +28,7 @@ const fadeIn = (direction, delay) => {
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -52,7 +53,10 @@ const Contact = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => alert("Thank you. I will get back to you ASAP."))
+      .then(() => {
+        setShowModal(true);
+        myForm.reset();
+      })
       .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
   };
@@ -74,6 +78,52 @@ const Contact = () => {
         {/* Overlay gradient for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70 pointer-events-none" />
       </div>
+
+      {/* Success Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="bg-gradient-to-br from-gray-900 to-black border-2 border-red-600 rounded-lg p-8 max-w-md w-full shadow-2xl shadow-red-600/20"
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              {/* Success Icon */}
+              <div className="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center">
+                <svg
+                  className="w-8 h-8 text-red-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+
+              {/* Message */}
+              <h3 className="text-2xl font-bold text-white">
+                Message Sent!
+              </h3>
+              <p className="text-gray-300">
+                Thank you for reaching out. I will get back to you as soon as possible.
+              </p>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setShowModal(false)}
+                className="mt-4 px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 w-full"
+              >
+                Close
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 container mx-auto pt-32 sm:pt-40 lg:pt-32 pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-6 text-center xl:text-left flex items-center justify-center min-h-screen">
