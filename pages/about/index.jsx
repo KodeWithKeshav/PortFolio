@@ -114,7 +114,7 @@ export const aboutData = [
         stage: "Batch Topper",
       },
       {
-        title: "Smart India Hackathon - Selected",
+        title: "Smart India Internal Hackathon - Selected",
         stage: "2025",
       },
       {
