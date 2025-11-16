@@ -14,6 +14,8 @@ import {
   SiExpress,
   SiCplusplus,
   SiJavascript,
+  SiSolidity,
+  SiFlutter,
 } from "react-icons/si";
 
 const fadeIn = (direction, delay) => {
@@ -49,14 +51,15 @@ export const aboutData = [
           FaPython,
           FaJava,
           SiJavascript,
+           SiSolidity,
         ],
       },
       {
-        title: "Web Tech",
-        icons: [FaNode, SiExpress, SiMongodb, FaReact],
+        title: "Web & Mobile",
+        icons: [FaNode, SiExpress, SiMongodb, FaReact, SiFlutter],
       },
       {
-        title: "AI & Hardware",
+        title: "AI & Embedded",
         icons: [SiTensorflow, SiArduino],
       },
     ],
@@ -65,16 +68,24 @@ export const aboutData = [
     title: "experience",
     info: [
       {
-        title: "NSS Volunteer - Amrita Vishwa Vidyapeetham",
+        title: "IoT Engineer - Intel IoT Club",
+        stage: "2025 - Present",
+      },
+      {
+        title: "Web Dev Team - Tensor",
+        stage: "2025 - Present",
+      },
+      {
+        title: "Web Developer - Hivetz",
+        stage: "2025 - Present",
+      },
+      {
+        title: "Research Contributor - Amrita",
         stage: "2023 - Present",
       },
       {
-        title: "Intel IoT Club Member - Amrita Vishwa Vidyapeetham",
-        stage: "2023 - Present",
-      },
-      {
-        title: "Research Contributor - Amrita Vishwa Vidyapeetham",
-        stage: "2023 - Present",
+        title: "NSS Volunteer - Amrita",
+        stage: "2023 - 2025",
       },
     ],
   },
@@ -82,16 +93,16 @@ export const aboutData = [
     title: "research",
     info: [
       {
-        title: "AI's Influence on Gender Representation",
-        stage: "Feb 2025",
+        title: "AI’s Influence on Gender Representation and Societal Norms in Emerging Technologies",
+        stage: "Under Review",
       },
       {
-        title: "SecureAI-Cyber: AI-Powered Cybersecurity",
-        stage: "Feb 2025",
+        title: "SecureAI-Cyber: An AI-Powered Cybersecurity Solution for Scalable Threat Management",
+        stage: "Under Review",
       },
       {
-        title: "Healthcare Support with Multimodal AI",
-        stage: "Dec 2024",
+        title: "Redefining Healthcare support through Personalized Nutrition and Lifestyle Recommendations with Multimodal AI For People with Alzheimer’s disease: A study",
+        stage: "Accepted",
       },
     ],
   },
@@ -99,8 +110,12 @@ export const aboutData = [
     title: "credentials",
     info: [
       {
-        title: "B.Tech CSE - Amrita Vishwa Vidyapeetham",
-        stage: "2023 - Present",
+        title: "B.Tech CSE - Amrita (CGPA: 9.66/10)",
+        stage: "Batch Topper",
+      },
+      {
+        title: "Smart India Hackathon - Selected",
+        stage: "2025",
       },
       {
         title: "12th Grade - Velammal Bodhi Campus",
@@ -214,7 +229,7 @@ const About = () => {
                       <CountUp start={0} end={9.66} duration={5} decimals={2} decimal="." />
                     </div>
                     <div className="text-xs uppercase tracking-[1px] leading-[1.4] text-gray-400">
-                      Academic Score
+                      Academic
                     </div>
                   </div>
 
@@ -224,7 +239,7 @@ const About = () => {
                       <CountUp start={0} end={10} duration={5} />+
                     </div>
                     <div className="text-xs uppercase tracking-[1px] leading-[1.4] text-gray-400">
-                      Systems Built
+                      Systems
                     </div>
                   </div>
 
@@ -234,7 +249,7 @@ const About = () => {
                       <CountUp start={0} end={3} duration={5} />
                     </div>
                     <div className="text-xs uppercase tracking-[1px] leading-[1.4] text-gray-400">
-                      Papers Published
+                      Papers
                     </div>
                   </div>
 
@@ -244,7 +259,7 @@ const About = () => {
                       <CountUp start={0} end={3} duration={5} />+
                     </div>
                     <div className="text-xs uppercase tracking-[1px] leading-[1.4] text-gray-400">
-                      Certifications
+                      Certs
                     </div>
                   </div>
                 </div>

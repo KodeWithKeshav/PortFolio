@@ -18,8 +18,8 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* navigation */}
-          <nav className="flex gap-8">
+          {/* navigation - desktop only */}
+          <nav className="hidden lg:flex gap-8">
             <Link href="/" className="text-gray-300 hover:text-red-600 transition-colors duration-300 font-medium">
               Home
             </Link>
