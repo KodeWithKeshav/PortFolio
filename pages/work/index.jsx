@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { BsArrowRight } from "react-icons/bs";
 
-// Mock Circles component
 const Circles = () => <div className="absolute inset-0 pointer-events-none opacity-20" />;
 
 const fadeIn = (direction, delay) => ({
