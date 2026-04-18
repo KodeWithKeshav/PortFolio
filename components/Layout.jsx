@@ -4,6 +4,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import TopLeftImg from "../components/TopLeftImg";
+import ClickSpark from "../components/ClickSpark";
 
 // setup font
 const sora = Sora({
@@ -17,22 +18,24 @@ const Layout = ({ children }) => {
     <main
       className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
     >
-      {/* metadata */}
-      <Head>
-        <title>Keshav S | Portfolio</title>
-        <meta
-          name="keywords"
-          content="react, next, nextjs, html, css, javascript, js, modern-ui, modern-ux, portfolio, framer-motion, 3d-website, particle-effect"
-        />
-        <meta name="theme-color" content="#f13024" />
-      </Head>
+      <ClickSpark sparkColor="#f13024" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
+        {/* metadata */}
+        <Head>
+          <title>Keshav S | Portfolio</title>
+          <meta
+            name="keywords"
+            content="react, next, nextjs, html, css, javascript, js, modern-ui, modern-ux, portfolio, framer-motion, 3d-website, particle-effect"
+          />
+          <meta name="theme-color" content="#f13024" />
+        </Head>
 
-      <TopLeftImg />
-      <Nav />
-      <Header />
+        <TopLeftImg />
+        <Nav />
+        <Header />
 
-      {/* main content */}
-      {children}
+        {/* main content */}
+        {children}
+      </ClickSpark>
     </main>
   );
 };

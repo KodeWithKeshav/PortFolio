@@ -7,6 +7,8 @@ import {
   HiUser,
   HiViewColumns,
   HiEnvelope,
+  HiDocumentText,
+  HiTrophy,
 } from "react-icons/hi2";
 
 // nav data
@@ -14,6 +16,8 @@ export const navData = [
   { name: "home", path: "/", Icon: HiHome },
   { name: "about", path: "/about", Icon: HiUser },
   { name: "projects", path: "/work", Icon: HiViewColumns },
+  { name: "certificates", path: "/certificates", Icon: HiTrophy },
+  { name: "resume", path: "/resume", Icon: HiDocumentText },
   {
     name: "contact",
     path: "/contact",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ShinyText from "./ShinyText";
 
 const Header = () => {
   return (
@@ -12,8 +13,9 @@ const Header = () => {
               <div className="w-12 h-12 bg-red-600 flex items-center justify-center">
                 <span className="text-white font-bold text-2xl">K</span>
               </div>
-              <span className="text-white font-bold text-2xl tracking-wider">
-                KESHAV <span className="text-red-600">S</span>
+              <span className="font-bold text-2xl tracking-wider flex gap-2">
+                <ShinyText text="KESHAV" speed={2} color="#b5b5b5" shineColor="#ffffff" spread={90} />
+                <ShinyText text="S" speed={2} color="#f13024" shineColor="#ffffff" spread={90} animationOffset={-0.4} />
               </span>
             </div>
           </Link>
@@ -28,6 +30,12 @@ const Header = () => {
             </Link>
             <Link href="/work" className="text-gray-300 hover:text-red-600 transition-colors duration-300 font-medium">
               Projects
+            </Link>
+            <Link href="/certificates" className="text-gray-300 hover:text-red-600 transition-colors duration-300 font-medium">
+              Certificates
+            </Link>
+            <Link href="/resume" className="text-gray-300 hover:text-red-600 transition-colors duration-300 font-medium">
+              Resume
             </Link>
             <Link href="/contact" className="text-gray-300 hover:text-red-600 transition-colors duration-300 font-medium">
               Contact
