@@ -3,6 +3,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { HiEnvelope, HiPhone, HiMapPin } from "react-icons/hi2";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import ProfileCard from "../../components/ProfileCard";
 
 const fadeIn = (direction, delay) => {
   return {
@@ -29,6 +30,7 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -135,58 +137,117 @@ const Contact = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden xl:flex flex-col gap-6 xl:max-w-[350px] bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-red-600/20 hover:bg-black/40 transition-all duration-300"
+            className="hidden xl:block w-full xl:max-w-[350px] perspective-1000 z-20"
+            style={{ perspective: "1000px" }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-left text-white">
-              Get In <span className="text-red-600">Touch</span>
-            </h2>
-
-            {/* Contact Details */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 text-left">
-                <HiEnvelope className="text-red-600 text-xl flex-shrink-0" />
-                <div>
-                  <p className="text-xs text-gray-500 uppercase">Email</p>
-                  <p className="text-gray-300 text-sm">keshavs100605@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 text-left">
-                <HiPhone className="text-red-600 text-xl flex-shrink-0" />
-                <div>
-                  <p className="text-xs text-gray-500 uppercase">Phone</p>
-                  <p className="text-gray-300 text-sm">+91 7305051171</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 text-left">
-                <HiMapPin className="text-red-600 text-xl flex-shrink-0" />
-                <div>
-                  <p className="text-xs text-gray-500 uppercase">Location</p>
-                  <p className="text-gray-300 text-sm">Coimbatore, India</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex gap-3">
-              <a
-                href="https://github.com/KodeWithKeshav"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 border border-red-600/30 flex items-center justify-center hover:border-red-600 hover:bg-red-600/10 transition-all duration-300 text-gray-300 hover:text-red-600"
+            <motion.div
+              className="w-full relative h-[420px] cursor-pointer"
+              animate={{ rotateY: isFlipped ? 180 : 0 }}
+              transition={{ duration: 0.8, type: "spring", stiffness: 100, damping: 20 }}
+              style={{ transformStyle: "preserve-3d" }}
+              onClick={() => setIsFlipped(!isFlipped)}
+            >
+              {/* Front side: ProfileCard */}
+              <div 
+                className="absolute inset-0 w-full h-full"
+                style={{ 
+                  backfaceVisibility: "hidden", 
+                  WebkitBackfaceVisibility: "hidden",
+                  pointerEvents: isFlipped ? "none" : "auto" 
+                }}
               >
-                <FaGithub className="text-lg" />
-              </a>
-              <a
-                href="https://linkedin.com/in/keshav-s-545345266"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 border border-red-600/30 flex items-center justify-center hover:border-red-600 hover:bg-red-600/10 transition-all duration-300 text-gray-300 hover:text-red-600"
+                <ProfileCard
+                  name="Keshav S"
+                  title="CS Engineer • AI Researcher"
+                  handle="KodeWithKeshav"
+                  status="Available"
+                  contactText="Connect"
+                  avatarUrl="/keshav_avatar_holographic.png"
+                  iconUrl="/iconpattern.png"
+                  showUserInfo={true}
+                  enableTilt={true}
+                  enableMobileTilt={false}
+                  onContactClick={(e) => {
+                    // Stop propagation so clicking the button doesn't trigger the parent twice
+                    e.stopPropagation();
+                    setIsFlipped(true);
+                  }}
+                  behindGlowColor="rgba(241, 48, 36, 0.4)"
+                  innerGradient="linear-gradient(145deg, #1a0505cc 0%, #f1302422 100%)"
+                  behindGlowEnabled
+                />
+              </div>
+
+              {/* Back side: Contact Info Details */}
+              <div 
+                className="absolute inset-0 w-full h-full bg-black/80 backdrop-blur-md p-8 rounded-[30px] border border-red-600/30 hover:border-red-600/50 hover:shadow-[0_0_30px_-5px_rgba(241,48,36,0.2)] transition-all duration-300 flex flex-col justify-center gap-8"
+                style={{ 
+                  backfaceVisibility: "hidden", 
+                  WebkitBackfaceVisibility: "hidden", 
+                  transform: "rotateY(180deg)",
+                  pointerEvents: isFlipped ? "auto" : "none"
+                }}
               >
-                <FaLinkedin className="text-lg" />
-              </a>
-            </div>
+                <h2 className="text-3xl font-bold text-center text-white">
+                  Get In <span className="text-red-600">Touch</span>
+                </h2>
+
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4 text-left group">
+                    <div className="w-10 h-10 rounded-full bg-red-600/10 flex items-center justify-center group-hover:bg-red-600/20 transition-colors">
+                      <HiEnvelope className="text-red-400 text-lg" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Email</p>
+                      <p className="text-gray-200 text-sm font-medium">keshavs100605@gmail.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 text-left group">
+                    <div className="w-10 h-10 rounded-full bg-red-600/10 flex items-center justify-center group-hover:bg-red-600/20 transition-colors">
+                      <HiPhone className="text-red-400 text-lg" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Phone</p>
+                      <p className="text-gray-200 text-sm font-medium">+91 7305051171</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 text-left group">
+                    <div className="w-10 h-10 rounded-full bg-red-600/10 flex items-center justify-center group-hover:bg-red-600/20 transition-colors">
+                      <HiMapPin className="text-red-400 text-lg" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Location</p>
+                      <p className="text-gray-200 text-sm font-medium">Coimbatore, India</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 justify-center mt-2">
+                  <a
+                    href="https://github.com/KodeWithKeshav"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-12 h-12 rounded-full border border-red-600/30 flex items-center justify-center hover:border-red-600 hover:bg-red-600/10 hover:scale-110 transition-all duration-300 text-gray-300 hover:text-red-500 relative group"
+                  >
+                    <div className="absolute inset-0 rounded-full bg-red-600/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <FaGithub className="text-xl relative z-10" />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/keshav-s-545345266"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-12 h-12 rounded-full border border-red-600/30 flex items-center justify-center hover:border-red-600 hover:bg-red-600/10 hover:scale-110 transition-all duration-300 text-gray-300 hover:text-red-500 relative group"
+                  >
+                    <div className="absolute inset-0 rounded-full bg-red-600/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <FaLinkedin className="text-xl relative z-10" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
 
           {/* Right side - Form */}

@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Transition from "../components/Transition";
 
 import "../styles/globals.css";
+import "../components/ProfileCard.css";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
