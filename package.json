@@ -2,18 +2,38 @@
   "name": "modern-portfolio",
   "version": "1.0.1",
   "private": true,
-
-  "engines": {
-    "node": "24.x"
+  "author": {
+    "name": "Keshav S",
+    "email": "keshavs100605@gmail.com",
+    "url": "https://github.com/KodeWithKeshav"
   },
-
+  "description": "My PortFolio",
+  "keywords": [
+    "react",
+    "next",
+    "nextjs",
+    "html",
+    "css",
+    "javascript",
+    "js",
+    "modern-ui",
+    "modern-ux",
+    "portfolio",
+    "framer-motion",
+    "3d-website",
+    "particle-effect"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KodeWithKeshav/PortFolio"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-
   "dependencies": {
     "@next/font": "^13.4.4",
     "@react-three/drei": "^10.7.6",
@@ -21,8 +41,8 @@
     "motion": "^12.38.0",
     "next": "16.0.10",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
     "react-countup": "^6.4.2",
+    "react-dom": "^19.2.0",
     "react-icons": "^4.8.0",
     "react-tsparticles": "^2.9.3",
     "spline": "^0.0.0",
@@ -31,11 +51,10 @@
     "three": "^0.181.0",
     "tsparticles": "^2.9.3"
   },
-
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.10",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2"
   }
