@@ -161,9 +161,10 @@ const CredentialCard = ({ item, index }) => (
 );
 
 /* ─── Skill icon with tooltip ─── */
-const SkillIcon = ({ Icon, index }) => (
+const SkillIcon = ({ Icon, name, index }) => (
   <motion.div
     variants={staggerItem}
+    title={name}
     className="group relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-red-600/30 hover:bg-red-600/10 transition-all duration-300 cursor-default"
   >
     <Icon className="text-2xl md:text-3xl text-gray-400 group-hover:text-red-400 transition-colors duration-300" />
@@ -357,8 +358,8 @@ const Resume = () => {
                       {item.title}
                     </div>
                     <div className="flex gap-3 flex-wrap">
-                      {item.icons.map((Icon, j) => (
-                        <SkillIcon key={j} Icon={Icon} index={j} />
+                      {item.techs.map((tech, j) => (
+                        <SkillIcon key={j} Icon={tech.icon} name={tech.name} index={j} />
                       ))}
                     </div>
                   </motion.div>
