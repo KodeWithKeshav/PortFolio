@@ -72,6 +72,7 @@ const Contact = () => {
           className="w-full h-full border-0"
           style={{
             pointerEvents: isMobile ? 'none' : 'auto',
+            filter: 'hue-rotate(320deg) saturate(1.5) brightness(0.95)',
           }}
           title="3D Globe"
         />
@@ -162,13 +163,16 @@ const Contact = () => {
                   handle="KodeWithKeshav"
                   status="Available"
                   contactText="Connect"
-                  avatarUrl="/keshav_avatar_holographic.png"
+                  avatarUrl="/noir_avatar.jpg"
                   iconUrl="/iconpattern.png"
                   showUserInfo={true}
                   enableTilt={true}
                   enableMobileTilt={false}
+                  monogram="KS"
+                  tagline="Tap card to connect →"
+                  quote="Where shadow meets syntax, intelligence is born."
+                  quoteAuthor="KodeWithKeshav"
                   onContactClick={(e) => {
-                    // Stop propagation so clicking the button doesn't trigger the parent twice
                     e.stopPropagation();
                     setIsFlipped(true);
                   }}
@@ -252,7 +256,6 @@ const Contact = () => {
 
           {/* Right side - Form */}
           <div className="flex flex-col w-full max-w-[700px] xl:flex-1">
-            {/* text */}
             <motion.h2
               variants={fadeIn("up", 0.2)}
               initial="hidden"

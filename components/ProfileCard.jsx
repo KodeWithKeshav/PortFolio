@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 // CSS imported via _app.jsx (Next.js pages dir requirement)
 
-const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#2a0a0a8c 0%,#f1302444 100%)';
+const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg, #1a0505cc 0%, #f1302422 100%)';
 
 const ANIMATION_CONFIG = {
   INITIAL_DURATION: 1200,
@@ -34,7 +34,11 @@ const ProfileCardComponent = ({
   status = 'Online',
   contactText = 'Contact',
   showUserInfo = true,
-  onContactClick
+  onContactClick,
+  monogram = 'KS',
+  tagline = 'Tap card to connect →',
+  quote = 'In the silence of the shadow, code shapes the future.',
+  quoteAuthor = 'KodeWithKeshav'
 }) => {
   const wrapRef = useRef(null);
   const shellRef = useRef(null);
@@ -312,6 +316,15 @@ const ProfileCardComponent = ({
           <div className="pc-inside">
             <div className="pc-shine" />
             <div className="pc-glare" />
+
+            {/* Corner decorations */}
+            <div className="pc-corner pc-corner-tl" />
+            <div className="pc-corner pc-corner-br" />
+
+            {/* Animated border glow */}
+            <div className="pc-border-glow" />
+
+            {/* Avatar */}
             <div className="pc-content pc-avatar-content">
               <img
                 className="avatar"
@@ -323,36 +336,32 @@ const ProfileCardComponent = ({
                   t.style.display = 'none';
                 }}
               />
-              {showUserInfo && (
-                <div className="pc-user-info">
-                  <div className="pc-user-details">
-                    <div className="pc-mini-avatar">
-                      <img
-                        src={miniAvatarUrl || avatarUrl}
-                        alt={`${name || 'User'} mini avatar`}
-                        loading="lazy"
-                        onError={e => {
-                          const t = e.target;
-                          t.style.opacity = '0.5';
-                          t.src = avatarUrl;
-                        }}
-                      />
-                    </div>
-                    <div className="pc-user-text">
-                      <div className="pc-handle" style={{ fontWeight: 400, opacity: 0.8, fontStyle: 'italic', letterSpacing: '0.5px' }}>
-                        Tap card to connect →
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
-            <div className="pc-content">
-              <div className="pc-details">
-                <h3>{name}</h3>
-                <p>{title}</p>
+
+            {/* Hover Quote */}
+            {quote && (
+              <div className="pc-quote">
+                <p className="pc-quote-text">“{quote}”</p>
+                {quoteAuthor && <p className="pc-quote-author">— {quoteAuthor}</p>}
               </div>
+            )}
+
+            {/* Monogram badge top-right */}
+            <div className="pc-monogram">
+              <span>{monogram}</span>
             </div>
+
+            {/* Bottom cinematic info bar */}
+            {showUserInfo && (
+              <div className="pc-content pc-bottom-bar-content">
+                <div className="pc-bottom-bar">
+                  <div className="pc-signature-line" />
+                  <h3 className="pc-name">{name}</h3>
+                  <p className="pc-title">{title}</p>
+                  <div className="pc-tagline">{tagline}</div>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </div>
